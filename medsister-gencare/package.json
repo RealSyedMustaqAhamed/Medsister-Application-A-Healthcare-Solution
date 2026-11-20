@@ -1,0 +1,26 @@
+{
+  "name": "medsister-gencare",
+  "version": "2.0.0",
+  "description": "MedSister GenCare: Next-Generation Privacy-Preserving Genomic Decision Support Platform for Consanguinity & Inherited Disease Risk Reduction (Abu Dhabi Future Health Challenge 03)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  },
+  "keywords": [
+    "genomics",
+    "premarital-screening",
+    "consanguinity",
+    "abu-dhabi",
+    "digital-health",
+    "zero-knowledge",
+    "private-set-intersection",
+    "genetic-counseling",
+    "fhir-genomics"
+  ],
+  "author": "MedSister Team",
+  "license": "MIT"
+}

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedSister GenCare 2.0 | Genomic Decision Support & Privacy Platform</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Top Header Navigation -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="brand">
+        <img src="logo.png" alt="MedSister" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title">MedSister <span class="badge-gencare">GenCare 2.0</span></span>
+          <span class="brand-subtitle" data-i18n="subtitle">Abu Dhabi Future Health Challenge · Inherited Disease Risk
+            Reduction</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="status-indicator">
+          <span class="pulse-dot"></span>
+          <span data-i18n="egp_live">Emirati Genome Program (EGP) Connected</span>
+        </div>
+
+        <button class="lang-toggle-btn" id="langToggle">
+          <span id="currentLangIcon">🌐</span>
+          <span id="currentLangText">العربية (Arabic)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs: Interactive Segmented Pill Dock -->
+  <nav class="nav-tabs-bar">
+    <div class="tabs-container" id="tabsPillContainer">
+      <button class="nav-tab active" data-tab="overview" title="MedSister 2.0 Core Features">
+        <span class="tab-step">1</span>
+        <span class="tab-icon">✨</span>
+        <span class="tab-label" data-i18n="tab_overview">Core Features</span>
+      </button>
+      <button class="nav-tab" data-tab="risk-explainer" title="Genomic Risk & Consanguinity">
+        <span class="tab-step">2</span>
+        <span class="tab-icon">🧬</span>
+        <span class="tab-label" data-i18n="tab_risk">Genomic Risk</span>
+      </button>
+      <button class="nav-tab" data-tab="privacy-matcher" title="Zero-Knowledge Couple Matcher">
+        <span class="tab-step">3</span>
+        <span class="tab-icon">🔒</span>
+        <span class="tab-label" data-i18n="tab_privacy">Couple Matcher</span>
+      </button>
+      <button class="nav-tab" data-tab="decision-aid" title="Values-Sensitive Decision Aid">
+        <span class="tab-step">4</span>
+        <span class="tab-icon">⚖️</span>
+        <span class="tab-label" data-i18n="tab_decision">Decision Aid</span>
+      </button>
+      <button class="nav-tab" data-tab="counselor-pedigree" title="Counselor Hub & Pedigree">
+        <span class="tab-step">5</span>
+        <span class="tab-icon">👨‍⚕️</span>
+        <span class="tab-label" data-i18n="tab_counselor">Counselor Hub</span>
+      </button>
+      <button class="nav-tab" data-tab="comprehension-metrics" title="Comprehension & Audit Metrics">
+        <span class="tab-step">6</span>
+        <span class="tab-icon">📊</span>
+        <span class="tab-label" data-i18n="tab_metrics">Audit & Metrics</span>
+      </button>
+      <button class="nav-tab" data-tab="ai-navigator" title="MedSister AI Conversational Navigator">
+        <span class="tab-step">7</span>
+        <span class="tab-icon">💬</span>
+        <span class="tab-label" data-i18n="tab_chat">AI Navigator</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="main-content">
+
+    <!-- TAB 1: OVERVIEW & EVOLUTION -->
+    <section id="tab-overview" class="tab-pane active">
+      <div class="hero-banner">
+        <div class="hero-text">
+          <span class="badge-gold" data-i18n="hero_badge">Abu Dhabi Future Health Digital Innovation Challenge</span>
+          <h1 data-i18n="hero_title">Empowering Families, Protecting Heritage: Reducing Inherited Disease Risk in
+            Consanguinity</h1>
+          <p data-i18n="hero_desc">
+            Transforming premarital screening in Abu Dhabi from an anxiety-inducing test into a respectful,
+            privacy-preserving, values-aligned reproductive health journey. Powered by Zero-Knowledge Private Set
+            Intersection (PSI), clinical genetics guardrails, and culturally fluent education.
+          </p>
+        </div>
+        <div class="hero-stats-card">
+          <div class="stat-item">
+            <span class="stat-number">570</span>
+            <span class="stat-label" data-i18n="stat_genes">Genes in UAE Recessive Panel</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label" data-i18n="stat_privacy">Zero-Knowledge Partner Privacy</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label" data-i18n="stat_coercion">Marriages Coerced or Judged</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem Statement & Challenge Alignment Card -->
+      <div class="card problem-card">
+        <div class="card-header">
+          <h2 data-i18n="problem_title">Challenge Alignment: Fertility Track 03 (Abu Dhabi)</h2>
+        </div>
+        <div class="card-body">
+          <p class="lead-text" data-i18n="problem_desc">
+            Abu Dhabi leads the world in population genomics through the Emirati Genome Program (EGP). However,
+            screening is only clinically transformative when young couples can <strong>understand their carrier status
+              without stigma</strong>, protect their genetic privacy from extended family gossip, and access modern
+            reproductive solutions like <strong>PGT-M with IVF</strong>.
+          </p>
+          <div class="pillars-grid">
+            <div class="pillar-box">
+              <span class="pillar-num">1</span>
+              <h3 data-i18n="p1_title">Risk Explanation</h3>
+              <p data-i18n="p1_desc">Demythologizes carrier status ($Aa$). Explains 25% probabilistic child risk vs
+                diagnosis in plain Arabic & English.</p>
+            </div>
+            <div class="pillar-box">
+              <span class="pillar-num">2</span>
+              <h3 data-i18n="p2_title">Values-Sensitive Choice</h3>
+              <p data-i18n="p2_desc">Empowers couples with PGT-M, prenatal testing, and early neonatal care without
+                judging consanguineous traditions.</p>
+            </div>
+            <div class="pillar-box">
+              <span class="pillar-num">3</span>
+              <h3 data-i18n="p3_title">Qualified Human Counseling</h3>
+              <p data-i18n="p3_desc">Strict clinical boundary between AI education and DoH/ADPHC accredited genetic
+                counselors via warm FHIR handoff.</p>
+            </div>
+            <div class="pillar-box">
+              <span class="pillar-num">4</span>
+              <h3 data-i18n="p4_title">Privacy-Preserving Workflows</h3>
+              <p data-i18n="p4_desc">Zero-Knowledge Private Set Intersection (PSI). Neither partner sees unshared
+                carrier mutations, stopping cascade stigma.</p>
+            </div>
+            <div class="pillar-box">
+              <span class="pillar-num">5</span>
+              <h3 data-i18n="p5_title">Safe Linkage to Care</h3>
+              <p data-i18n="p5_desc">Seamless referral into Malaffi-connected reproductive genomics centers (e.g.
+                Cleveland Clinic AD, M42).</p>
+            </div>
+            <div class="pillar-box">
+              <span class="pillar-num">6</span>
+              <h3 data-i18n="p6_title">Measurable Comprehension</h3>
+              <p data-i18n="p6_desc">Measures knowledge gain, Decisional Conflict (DCS), and counseling uptake—never
+                canceled marriages.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MedSister 2.0 Feature Architecture & Workflow -->
+      <div class="card">
+        <div class="card-header">
+          <h2 data-i18n="features_architecture_title">MedSister 2.0: Core Product Capabilities & Integrated Workflow</h2>
+        </div>
+        <div class="card-body">
+          <div class="pillars-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+            <div class="pillar-box" style="border-top: 3px solid var(--primary);">
+              <span class="pillar-num">🧬</span>
+              <h3 style="color: var(--primary);" data-i18n="feat_1_title">1. Culturally-Fluent Genomic Risk Engine</h3>
+              <p data-i18n="feat_1_desc">Translates complex 570-gene recessive screening results into plain Arabic and English. Demystifies carrier status ($Aa$) as healthy and non-sick. Visualizes Mendelian 25% recurrence probabilities per pregnancy and distinguishes pathogenic variants from Variants of Uncertain Significance (VUS).</p>
+            </div>
+
+            <div class="pillar-box" style="border-top: 3px solid var(--accent-emerald);">
+              <span class="pillar-num">🔐</span>
+              <h3 style="color: var(--accent-emerald);" data-i18n="feat_2_title">2. Zero-Knowledge Private Set Intersection (PSI)</h3>
+              <p data-i18n="feat_2_desc">Cryptographic couple matching protocol. Both partners upload EGP lab data; the algorithm discovers shared recessive risk alleles using blinded HMAC tokens. <strong>Zero leakage of non-shared carrier variants</strong>, eliminating cascade gossip and social stigma in extended families.</p>
+            </div>
+
+            <div class="pillar-box" style="border-top: 3px solid var(--accent-purple);">
+              <span class="pillar-num">💬</span>
+              <h3 style="color: var(--accent-purple);" data-i18n="feat_3_title">3. MedSister AI: Empathetic Bilingual Chatbot</h3>
+              <p data-i18n="feat_3_desc">24/7 conversational guidance with strict clinical boundary guardrails. Provides cognitive scaffolding, answers questions about consanguinity and Islamic bioethics (UAE Fatwa Council rulings), and defuses premarital anxiety without providing unverified medical diagnoses.</p>
+            </div>
+
+            <div class="pillar-box" style="border-top: 3px solid var(--accent-gold);">
+              <span class="pillar-num">⚖️</span>
+              <h3 style="color: var(--accent-gold);" data-i18n="feat_4_title">4. Non-Directive Values-Sensitive Decision Aid</h3>
+              <p data-i18n="feat_4_desc">Equips carrier couples with actionable reproductive pathways: In-Vitro Fertilization (IVF) with Pre-implantation Genetic Testing (PGT-M), prenatal diagnosis, or early neonatal metabolic care. Fully respects marital autonomy and cultural values with zero coercion.</p>
+            </div>
+
+            <div class="pillar-box" style="border-top: 3px solid #0284c7;">
+              <span class="pillar-num">👨‍⚕️</span>
+              <h3 style="color: #0284c7;" data-i18n="feat_5_title">5. Automated FHIR Pedigree & Tele-Triage Hub</h3>
+              <p data-i18n="feat_5_desc">Automatically generates standard 3-generation pedigrees and clinical handover packages formatted in HL7 FHIR Genomics. Initiates closed-loop tele-triage to DoH-accredited genetic counselors at Cleveland Clinic Abu Dhabi and M42 Healthcare.</p>
+            </div>
+
+            <div class="pillar-box" style="border-top: 3px solid #10b981;">
+              <span class="pillar-num">🛡️</span>
+              <h3 style="color: #10b981;" data-i18n="feat_6_title">6. Verifiable Consent & Audit Ledger</h3>
+              <p data-i18n="feat_6_desc">Blockchain-anchored verifiable consent management. Tracks explicit partner consent scopes, prevents unauthorized family access, and logs tamper-evident audit trails compliant with UAE Health Data Law and international bioethics standards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: GENOMIC RISK & CONSANGUINITY EXPLAINER -->
+    <section id="tab-risk-explainer" class="tab-pane">
+      <div class="section-header">
+        <h2 data-i18n="risk_title">Interactive Genomic Risk & Consanguinity Visualizer</h2>
+        <p data-i18n="risk_subtitle">Explore carrier genetics, calculate inbreeding coefficients (F), and see how
+          recessive concordance works in plain language.</p>
+      </div>
+
+      <div class="grid-2col">
+        <!-- Interactive Punnett Square -->
+        <div class="card">
+          <div class="card-header">
+            <h3 data-i18n="punnett_title">Mendelian Autosomal Recessive Recurrence Simulator</h3>
+          </div>
+          <div class="card-body">
+            <p class="hint-text" data-i18n="punnett_hint">
+              Select the genotype for Partner 1 and Partner 2 to see the exact statistical distribution for each
+              pregnancy:
+            </p>
+
+            <div class="genotype-selectors">
+              <div class="selector-group">
+                <label data-i18n="partner1_label">Partner 1 Genotype:</label>
+                <select id="p1Genotype" class="custom-select">
+                  <option value="Aa" selected>Carrier (Aa) - Completely Healthy</option>
+                  <option value="AA">Non-Carrier (AA) - Healthy</option>
+                </select>
+              </div>
+
+              <div class="selector-group">
+                <label data-i18n="partner2_label">Partner 2 Genotype:</label>
+                <select id="p2Genotype" class="custom-select">
+                  <option value="Aa" selected>Carrier (Aa) - Completely Healthy</option>
+                  <option value="AA">Non-Carrier (AA) - Healthy</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Visual Punnett Grid -->
+            <div class="punnett-wrapper">
+              <div class="punnett-grid">
+                <div class="cell header-cell"></div>
+                <div class="cell header-cell" id="p1-allele-1">A</div>
+                <div class="cell header-cell" id="p1-allele-2">a</div>
+
+                <div class="cell header-cell" id="p2-allele-1">A</div>
+                <div class="cell offspring-cell normal" id="cell-00">
+                  <span class="gene-pair">AA</span>
+                  <span class="gene-desc" data-i18n="unaffected">Unaffected (25%)</span>
+                </div>
+                <div class="cell offspring-cell carrier" id="cell-01">
+                  <span class="gene-pair">Aa</span>
+                  <span class="gene-desc" data-i18n="carrier_healthy">Carrier (25%)</span>
+                </div>
+
+                <div class="cell header-cell" id="p2-allele-2">a</div>
+                <div class="cell offspring-cell carrier" id="cell-10">
+                  <span class="gene-pair">Aa</span>
+                  <span class="gene-desc" data-i18n="carrier_healthy">Carrier (25%)</span>
+                </div>
+                <div class="cell offspring-cell affected" id="cell-11">
+                  <span class="gene-pair">aa</span>
+                  <span class="gene-desc" data-i18n="affected_risk">Affected Risk (25%)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stick Figure Matrix (1 in 4 visualizer) -->
+            <div class="visual-numeracy-box">
+              <h4 data-i18n="numeracy_title">Visual Probability in Each Pregnancy:</h4>
+              <div class="stick-figures" id="stickFigures">
+                <div class="figure normal" title="Child 1: Non-Carrier (Healthy)">
+                  <span class="fig-icon">👶</span>
+                  <span class="fig-label">25% Unaffected</span>
+                </div>
+                <div class="figure carrier" title="Child 2: Carrier (Healthy)">
+                  <span class="fig-icon">👶</span>
+                  <span class="fig-label">50% Carrier (Healthy)</span>
+                </div>
+                <div class="figure carrier" title="Child 3: Carrier (Healthy)">
+                  <span class="fig-icon">👶</span>
+                  <span class="fig-label">Healthy</span>
+                </div>
+                <div class="figure affected" title="Child 4: Recessive Condition Risk">
+                  <span class="fig-icon">👶</span>
+                  <span class="fig-label">25% Affected Risk</span>
+                </div>
+              </div>
+              <div class="alert-box info-alert" data-i18n="punnett_explainer">
+                💡 <strong>Key Takeaway:</strong> A 25% chance applies to <em>each pregnancy independently</em> (like
+                rolling a 4-sided die each time). It does NOT mean that if you have 4 children, exactly 1 will be
+                affected! Furthermore, 75% of children will be completely unaffected.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consanguinity & Inbreeding Coefficient (F) Calculator -->
+        <div class="card">
+          <div class="card-header">
+            <h3 data-i18n="consang_calc_title">Consanguinity & Kinship Coefficient ($F$)</h3>
+          </div>
+          <div class="card-body">
+            <p data-i18n="consang_desc">
+              Consanguinity does not create new mutations. It simply increases the chance that both partners share the
+              same ancestral recessive gene (*Identical by Descent*).
+            </p>
+
+            <div class="selector-group">
+              <label data-i18n="union_type_label">Select Family Relationship:</label>
+              <select id="consanguinitySelect" class="custom-select">
+                <option value="0.0625" selected>First Cousins (أبناء العمومة / الخؤولة) — F = 1/16 (6.25%)</option>
+                <option value="0.03125">First Cousins Once Removed — F = 1/32 (3.125%)</option>
+                <option value="0.015625">Second Cousins (أبناء أبناء العمومة) — F = 1/64 (1.56%)</option>
+                <option value="0.0">Non-Consanguineous / Unrelated — F = 0 (Background Population)</option>
+              </select>
+            </div>
+
+            <div class="f-metric-card">
+              <div class="f-score-display">
+                <span class="f-label" data-i18n="f_coefficient_label">Inbreeding Coefficient ($F$):</span>
+                <span class="f-val" id="fScoreVal">6.25%</span>
+              </div>
+              <div class="f-meaning-text" id="fMeaningText">
+                For first cousins, approximately 6.25% of their child's genome will be homozygous by descent. Premarital
+                screening tests 570 genes to safeguard those specific shared regions.
+              </div>
+            </div>
+
+            <!-- Uncertainty & Variant Classification Hierarchy -->
+            <div class="variant-hierarchy-box">
+              <h4 data-i18n="variant_title">Understanding Genetic Findings: Certainty vs Uncertainty</h4>
+              <div class="variant-tiers">
+                <div class="tier pathogenic">
+                  <span class="tier-badge" data-i18n="tier_p_badge">Pathogenic (P/LP)</span>
+                  <p data-i18n="tier_p_desc">Proven link to disease. If both partners carry this, couple concordance is
+                    flagged.</p>
+                </div>
+                <div class="tier vus">
+                  <span class="tier-badge" data-i18n="tier_vus_badge">Variant of Uncertain Significance (VUS)</span>
+                  <p data-i18n="tier_vus_desc">DNA change has unknown effect. <strong>Never treated as diagnosis or
+                      reason for alarm.</strong> Monitored by counselors.</p>
+                </div>
+                <div class="tier benign">
+                  <span class="tier-badge" data-i18n="tier_b_badge">Benign (B/LB)</span>
+                  <p data-i18n="tier_b_desc">Harmless natural human variation. Completely safe.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cultural-reassurance">
+              <span class="icon-halal">🕌</span>
+              <p data-i18n="cultural_reassurance_text">
+                <strong>Cultural Dignity:</strong> Consanguinity has been a valued pillar of family unity and social
+                stability in Abu Dhabi for generations. MedSister honors this heritage by providing actionable science
+                so you can preserve your family ties with complete health confidence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: PRIVACY-PRESERVING COUPLE MATCHER (ZERO-KNOWLEDGE PSI) -->
+    <section id="tab-privacy-matcher" class="tab-pane">
+      <div class="section-header">
+        <h2 data-i18n="privacy_section_title">Zero-Knowledge Private Set Intersection (PSI) Couple Matcher</h2>
+        <p data-i18n="privacy_section_subtitle">
+          Test the cryptographic privacy engine: Couples verify compatibility against Abu Dhabi's 570-gene recessive
+          panel <strong>without either partner revealing non-shared carrier variants</strong>.
+        </p>
+      </div>
+
+      <div class="privacy-threat-banner">
+        <div class="threat-icon">🛡️</div>
+        <div class="threat-text">
+          <strong data-i18n="privacy_guarantee_title">Zero Leakage Guarantee:</strong>
+          <span data-i18n="privacy_guarantee_desc">
+            In close-knit families, learning that Partner A carries a gene creates cascade gossip affecting their
+            brothers and sisters. Our protocol uses blinded HMAC-SHA256 tokens. Only mutually concordant genes are
+            revealed; all other carrier traits remain 100% private.
+          </span>
+        </div>
+      </div>
+
+      <div class="grid-2col">
+        <!-- Partner Profiles Configurator -->
+        <div class="card">
+          <div class="card-header">
+            <h3 data-i18n="partner_config_title">Select Test Couple Screening Profiles</h3>
+          </div>
+          <div class="card-body">
+            <!-- Preset Scenarios -->
+            <div class="scenario-buttons">
+              <button class="btn btn-secondary btn-sm" id="loadScenarioConcordant" data-i18n="btn_scenario_concordant">🧪 Load Scenario A: Concordant Pair (Shared Beta-Thalassemia)</button>
+              <button class="btn btn-secondary btn-sm" id="loadScenarioCompatible" data-i18n="btn_scenario_compatible">✅ Load Scenario B: Compatible Pair (Different Carrier Genes)</button>
+            </div>
+
+            <div class="partner-box">
+              <div class="partner-head">
+                <span class="partner-avatar">👨</span>
+                <div class="partner-info">
+                  <h4 data-i18n="partner1_name">Partner 1: Tariq (UAE National ID: ***9042)</h4>
+                  <span class="sub-badge" data-i18n="p1_consent">Explicit Consent: Granted (Couple-Matching Only)</span>
+                </div>
+              </div>
+              <div class="carrier-tags" id="p1CarrierTags">
+                <span class="tag tag-carrier">HBB (Beta-Thalassemia Carrier)</span>
+                <span class="tag tag-carrier">GJB2 (Hearing Loss Carrier)</span>
+              </div>
+            </div>
+
+            <div class="partner-box">
+              <div class="partner-head">
+                <span class="partner-avatar">👩</span>
+                <div class="partner-info">
+                  <h4 data-i18n="partner2_name">Partner 2: Fatima (UAE National ID: ***3318)</h4>
+                  <span class="sub-badge" data-i18n="p2_consent">Explicit Consent: Granted (Couple-Matching Only)</span>
+                </div>
+              </div>
+              <div class="carrier-tags" id="p2CarrierTags">
+                <span class="tag tag-carrier">HBB (Beta-Thalassemia Carrier)</span>
+                <span class="tag tag-carrier">CFTR (Cystic Fibrosis Carrier)</span>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-block" id="runPsiMatchBtn">
+              <span class="btn-icon">⚡</span>
+              <span data-i18n="btn_run_psi">Run Cryptographic Private Set Intersection (PSI) Match</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PSI Results & Verification Proof -->
+        <div class="card">
+          <div class="card-header">
+            <h3 data-i18n="psi_output_title">Cryptographic Compatibility & Zero-Leakage Output</h3>
+          </div>
+          <div class="card-body">
+            <div id="psiEmptyState" class="empty-state">
+              <div class="empty-icon">🔐</div>
+              <p data-i18n="psi_empty_prompt">Click "Run Cryptographic Match" to evaluate couple compatibility with
+                zero-knowledge data protection.</p>
+            </div>
+
+            <div id="psiResultsState" style="display: none;">
+              <div class="result-banner" id="matchBanner">
+                <div class="result-status" id="matchStatusText">Concordant Recessive Risk Identified</div>
+                <div class="result-tx" id="matchTxId">Tx: TX-L9K2-COMMITTED</div>
+              </div>
+
+              <div class="privacy-breakdown-card">
+                <h4 data-i18n="privacy_proof_heading">Privacy Preservation Audit Proof:</h4>
+                <ul class="proof-list">
+                  <li>
+                    <span class="proof-dot green"></span>
+                    <strong data-i18n="proof_1_label">Shared Concordant Gene:</strong>
+                    <span id="sharedGeneOutput" class="highlight-text">HBB (Beta-Thalassemia)</span>
+                  </li>
+                  <li>
+                    <span class="proof-dot green"></span>
+                    <strong data-i18n="proof_2_label">Partner 1 Protected Private Genes:</strong>
+                    <span id="p1ProtectedCount">GJB2 carrier status kept secret from Partner 2 & families</span>
+                  </li>
+                  <li>
+                    <span class="proof-dot green"></span>
+                    <strong data-i18n="proof_3_label">Partner 2 Protected Private Genes:</strong>
+                    <span id="p2ProtectedCount">CFTR carrier status kept secret from Partner 1 & families</span>
+                  </li>
+                  <li>
+                    <span class="proof-dot green"></span>
+                    <strong data-i18n="proof_4_label">Audit Ledger Signature:</strong>
+                    <code id="proofSig">0x89f4b13a7c88...e72c (Signed by HSM)</code>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="action-pathway-box" id="actionPathwayBox">
+                <h4 data-i18n="next_step_heading">Next Guided Care Steps:</h4>
+                <p id="actionPathwayText">
+                  Because both partners carry an altered copy of HBB, there is a 25% chance of an affected child per
+                  pregnancy. Modern reproductive pathways (PGT-M) allow you to proceed with marriage safely.
+                </p>
+                <div class="pathway-buttons">
+                  <button class="btn btn-outline btn-sm" id="btnExploreOptions" data-i18n="btn_explore_options">⚖️ Explore Reproductive Options (PGT-M)</button>
+                  <button class="btn btn-primary btn-sm" id="btnBookCounselorFast" data-i18n="btn_book_counselor_fast">👨‍⚕️ Book Genetic Counselor (Cleveland Clinic AD)</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: VALUES-SENSITIVE DECISION AID -->
+    <section id="tab-decision-aid" class="tab-pane">
+      <div class="section-header">
+        <h2 data-i18n="decision_title">Non-Directive, Values-Sensitive Reproductive Decision Aid</h2>
+        <p data-i18n="decision_subtitle">
+          Informed choice without coercion. Discover how modern reproductive medicine empowers carrier couples to build
+          healthy families in full harmony with personal values.
+        </p>
+      </div>
+
+      <div class="options-grid">
+        <!-- Option 1: PGT-M with IVF -->
+        <div class="option-card featured">
+          <div class="option-badge" data-i18n="opt1_badge">High Clinical Efficacy (98%+)</div>
+          <h3 data-i18n="opt1_title">1. IVF with Pre-implantation Genetic Testing (PGT-M)</h3>
+          <p data-i18n="opt1_desc">
+            Carrier couples undergo standard In-Vitro Fertilization (IVF). Embryos are genetically analyzed in the lab
+            before pregnancy occurs. Only embryos free of the specific familial recessive disorder are transferred.
+          </p>
+          <div class="option-details">
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="timing_label">Timing:</span>
+              <span class="detail-val" data-i18n="opt1_timing">Prior to pregnancy</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="availability_label">Abu Dhabi Access:</span>
+              <span class="detail-val" data-i18n="opt1_avail">Covered in designated UAE fertility centers</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="ethics_label">Bioethical Harmony:</span>
+              <span class="detail-val" data-i18n="opt1_ethics">Endorsed by UAE Fatwa Council & Fiqh Academy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Option 2: Natural Conception + Prenatal Diagnosis -->
+        <div class="option-card">
+          <div class="option-badge secondary" data-i18n="opt2_badge">In-Pregnancy Diagnostic</div>
+          <h3 data-i18n="opt2_title">2. Natural Conception + Prenatal Diagnosis</h3>
+          <p data-i18n="opt2_desc">
+            Couples conceive naturally. At weeks 10–13, Chorionic Villus Sampling (CVS) or at weeks 15–20, Amniocentesis
+            is performed to definitively test fetal genetic status, enabling informed medical planning.
+          </p>
+          <div class="option-details">
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="timing_label">Timing:</span>
+              <span class="detail-val" data-i18n="opt2_timing">First or second trimester</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="availability_label">Abu Dhabi Access:</span>
+              <span class="detail-val" data-i18n="opt2_avail">Maternal-Fetal Medicine centers</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="ethics_label">Clinical Goal:</span>
+              <span class="detail-val" data-i18n="opt2_goal">Early diagnosis & fetal therapy preparation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Option 3: Natural Conception + Early Neonatal Protocol -->
+        <div class="option-card">
+          <div class="option-badge secondary" data-i18n="opt3_badge">Manageable Disorders</div>
+          <h3 data-i18n="opt3_title">3. Natural Conception + Early Neonatal Protocol</h3>
+          <p data-i18n="opt3_desc">
+            Ideal for metabolic and hormonal conditions (such as PKU, Congenital Adrenal Hyperplasia, or treatable SMA).
+            Specialized medical teams are ready at delivery to start immediate presymptomatic treatment.
+          </p>
+          <div class="option-details">
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="timing_label">Timing:</span>
+              <span class="detail-val" data-i18n="opt3_timing">Immediate post-birth</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="availability_label">Abu Dhabi Access:</span>
+              <span class="detail-val" data-i18n="opt3_avail">Abu Dhabi Pediatric Endocrinology / Genetics</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="ethics_label">Outcome:</span>
+              <span class="detail-val" data-i18n="opt3_outcome">Prevents permanent cognitive/physical disability</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Option 4: Informed Autonomous Decision -->
+        <div class="option-card">
+          <div class="option-badge neutral" data-i18n="opt4_badge">Couple Autonomy</div>
+          <h3 data-i18n="opt4_title">4. Informed Decision & Continued Family Support</h3>
+          <p data-i18n="opt4_desc">
+            Couples make their own voluntary choices in consultation with qualified genetic counselors and family
+            elders. MedSister provides unwavering psychosocial support with zero stigmatization.
+          </p>
+          <div class="option-details">
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="timing_label">Timing:</span>
+              <span class="detail-val" data-i18n="opt4_timing">Self-determined</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="availability_label">Support:</span>
+              <span class="detail-val" data-i18n="opt4_support">Confidential counseling & psychological support</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-i18n="ethics_label">Philosophy:</span>
+              <span class="detail-val" data-i18n="opt4_philosophy">Respect for family values & autonomy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: ACCREDITED COUNSELOR HUB & PEDIGREE BUILDER -->
+    <section id="tab-counselor-pedigree" class="tab-pane">
+      <div class="section-header">
+        <h2 data-i18n="counselor_section_title">Qualified Human Counseling & FHIR Pedigree Hub</h2>
+        <p data-i18n="counselor_section_subtitle">
+          Ensuring a strict firewall between AI educational support and clinical advice. Auto-generate standard
+          3-generation pedigrees and initiate warm handoffs to DoH-accredited genetics professionals.
+        </p>
+      </div>
+
+      <div class="grid-2col">
+        <!-- Interactive 3-Generation Pedigree Visualizer -->
+        <div class="card">
+          <div class="card-header">
+            <h3 data-i18n="pedigree_title">3-Generation Family Pedigree (Consanguineous Union)</h3>
+          </div>
+          <div class="card-body">
+            <p class="hint-text" data-i18n="pedigree_hint">
+              Interactive clinical pedigree illustrating first-cousin consanguinity (double line) and carrier
+              transmission:
+            </p>
+
+            <div class="pedigree-canvas-wrapper">
+              <svg id="pedigreeSvg" viewBox="0 0 500 320" class="pedigree-svg">
+                <!-- Generation I: Common Grandparents -->
+                <text x="20" y="30" class="ped-gen-label">Gen I</text>
+                <!-- Grandfather (Carrier Aa) -->
+                <rect x="200" y="15" width="30" height="30" class="ped-male carrier" />
+                <line x1="230" y1="30" x2="270" y2="30" class="ped-line" />
+                <!-- Grandmother (Normal AA) -->
+                <circle cx="285" cy="30" r="15" class="ped-female" />
+                <text x="215" y="60" class="ped-label">Grandparents</text>
+
+                <!-- Children of Gen I (Gen II: Parents) -->
+                <line x1="250" y1="30" x2="250" y2="70" class="ped-line" />
+                <line x1="120" y1="70" x2="380" y2="70" class="ped-line" />
+
+                <!-- Gen II: Brother 1 (Father of Tariq) -->
+                <text x="20" y="125" class="ped-gen-label">Gen II</text>
+                <line x1="120" y1="70" x2="120" y2="100" class="ped-line" />
+                <rect x="105" y="100" width="30" height="30" class="ped-male carrier" />
+                <text x="90" y="145" class="ped-label">Father (Carrier)</text>
+
+                <!-- Gen II: Sister 1 (Mother of Fatima) -->
+                <line x1="380" y1="70" x2="380" y2="100" class="ped-line" />
+                <circle cx="380" cy="115" r="15" class="ped-female carrier" />
+                <text x="350" y="145" class="ped-label">Mother (Carrier)</text>
+
+                <!-- Gen III: Proband Couple (First Cousins) -->
+                <text x="20" y="225" class="ped-gen-label">Gen III</text>
+                <line x1="120" y1="130" x2="120" y2="180" class="ped-line" />
+                <line x1="380" y1="130" x2="380" y2="180" class="ped-line" />
+
+                <!-- Partner 1: Tariq (Carrier) -->
+                <rect x="180" y="180" width="30" height="30" class="ped-male carrier proband" />
+                <text x="175" y="225" class="ped-label proband-text">Tariq (Aa)</text>
+
+                <!-- Double Consanguinity Line -->
+                <line x1="210" y1="192" x2="290" y2="192" class="ped-line consang" />
+                <line x1="210" y1="198" x2="290" y2="198" class="ped-line consang" />
+
+                <!-- Partner 2: Fatima (Carrier) -->
+                <circle cx="305" cy="195" r="15" class="ped-female carrier proband" />
+                <text x="290" y="225" class="ped-label proband-text">Fatima (Aa)</text>
+
+                <!-- Potential Offspring (Gen IV) -->
+                <line x1="250" y1="195" x2="250" y2="250" class="ped-line" />
+                <line x1="200" y1="250" x2="300" y2="250" class="ped-line" />
+                <line x1="250" y1="250" x2="250" y2="270" class="ped-line" />
+                <circle cx="250" cy="285" r="12" class="ped-future" />
+                <text x="220" y="312" class="ped-label-alert">25% Recurrence Risk (aa)</text>
+              </svg>
+            </div>
+
+            <!-- Pedigree Legend -->
+            <div class="pedigree-legend">
+              <span class="legend-item"><span class="legend-box male"></span> Male</span>
+              <span class="legend-item"><span class="legend-box female"></span> Female</span>
+              <span class="legend-item"><span class="legend-box carrier-legend"></span> Carrier ($Aa$)</span>
+              <span class="legend-item"><span class="legend-line consang-line"></span> Consanguineous Union</span>
+            </div>
+
+            <button class="btn btn-secondary btn-sm" id="btnExportFhir" data-i18n="btn_export_fhir">📋 Export HL7 FHIR Genomics Pedigree (JSON)</button>
+          </div>
+        </div>
+
+        <!-- Tele-Triage & Counselor Booking -->
+        <div class="card">
+          <div class="card-header">
+            <h3 data-i18n="booking_title">Book Accredited Genetic Counselor Consultation</h3>
+          </div>
+          <div class="card-body">
+            <div class="counselor-profile">
+              <div class="counselor-avatar">🩺</div>
+              <div class="counselor-details">
+                <h4 data-i18n="counselor_name">Dr. Maryam Al-Mansoori, MS, CGC</h4>
+                <span class="counselor-role" data-i18n="counselor_role">Licensed Clinical Genetic Counselor (DoH / ADPHC)</span>
+                <span class="counselor-facility" data-i18n="counselor_facility">Cleveland Clinic Abu Dhabi / M42 Genomics Center</span>
+              </div>
+            </div>
+
+            <form id="bookingForm" class="booking-form">
+              <div class="form-group">
+                <label data-i18n="consult_mode_label">Consultation Mode:</label>
+                <select class="custom-select" id="consultMode">
+                  <option value="telehealth" selected>Secure Video Telehealth (via Malaffi Patient Portal)</option>
+                  <option value="in_person">In-Person Consultation (Cleveland Clinic Abu Dhabi)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="preferred_time_label">Preferred Date & Time:</label>
+                <input type="datetime-local" class="custom-input" id="preferredDateTime">
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="warm_handoff_label">Automated Warm Handover Package:</label>
+                <div class="checkbox-group">
+                  <label><input type="checkbox" checked disabled> <span data-i18n="bundle_fhir_label">Encrypted FHIR Pedigree Bundle</span></label>
+                  <label><input type="checkbox" checked disabled> <span data-i18n="bundle_concordance_label">Couple Recessive Concordance Summary (HBB)</span></label>
+                  <label><input type="checkbox" checked disabled> <span data-i18n="bundle_literacy_label">Pre-test Literacy & Decisional Conflict Score</span></label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="confirmBookingBtn" data-i18n="confirm_booking_btn">✅ Confirm Confidential Counselor Referral</button>
+            </form>
+
+            <div id="bookingSuccessBox" class="alert-box success-alert" style="display: none;">
+              🎉 <strong>Referral Confirmed!</strong> Your appointment reference is <strong
+                id="confirmedRefId">REF-2026-948</strong>. A secure calendar invite and preparatory video have been sent
+              to your verified patient portal.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: MEASURABLE COMPREHENSION & HEALTH METRICS -->
+    <section id="tab-comprehension-metrics" class="tab-pane">
+      <div class="section-header">
+        <h2 data-i18n="metrics_title">Measurable Comprehension, Equity & Health System Metrics</h2>
+        <p data-i18n="metrics_subtitle">
+          Demonstrating clinical efficacy without treating canceled marriages as a success metric. Measuring knowledge
+          gain, decisional comfort, and audit compliance.
+        </p>
+      </div>
+
+      <!-- Live KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-title" data-i18n="kpi1_title">Comprehension Lift</span>
+          <span class="kpi-value text-green" id="kpiComprehension">+41.4%</span>
+          <span class="kpi-sub" data-i18n="kpi1_sub">Pre-test: 48.2% ➔ Post-test: 89.6%</span>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-title" data-i18n="kpi2_title">Decisional Conflict (DCS)</span>
+          <span class="kpi-value text-blue" id="kpiDCS">22.4 / 100</span>
+          <span class="kpi-sub" data-i18n="kpi2_sub">Scores &lt;25 indicate high decision implementation</span>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-title" data-i18n="kpi3_title">Counseling Uptake Rate</span>
+          <span class="kpi-value text-gold" id="kpiUptake">93.4%</span>
+          <span class="kpi-sub" data-i18n="kpi3_sub">Concordant couples attending genetics referral</span>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-title" data-i18n="kpi4_title">Median Referral Latency</span>
+          <span class="kpi-value text-purple" id="kpiLatency">3.2 Days</span>
+          <span class="kpi-sub" data-i18n="kpi4_sub">From EGP screening to specialist consult</span>
+        </div>
+      </div>
+
+      <div class="grid-2col">
+        <!-- Interactive Comprehension Micro-Quiz -->
+        <div class="card">
+          <div class="card-header">
+            <h3 data-i18n="quiz_title">Interactive Knowledge & Numeracy Micro-Assessment</h3>
+          </div>
+          <div class="card-body">
+            <p data-i18n="quiz_desc">Take the quick 3-question assessment to measure genetic comprehension and update
+              real-time platform statistics:</p>
+
+            <form id="quizForm" class="quiz-form">
+              <div class="quiz-question">
+                <p><strong data-i18n="quiz_q1_text">1. If a person is identified as a "Carrier" for Beta-Thalassemia, what does this mean?</strong></p>
+                <label><input type="radio" name="q1" value="wrong1"> <span data-i18n="quiz_q1_opt1">They have severe anemia and require regular blood transfusions.</span></label>
+                <label><input type="radio" name="q1" value="correct"> <span data-i18n="quiz_q1_opt2">They are completely healthy and asymptomatic; risk only arises if their partner is also a carrier for the same gene.</span></label>
+                <label><input type="radio" name="q1" value="wrong2"> <span data-i18n="quiz_q1_opt3">They should not get married.</span></label>
+              </div>
+
+              <div class="quiz-question">
+                <p><strong data-i18n="quiz_q2_text">2. If both parents carry the exact same autosomal recessive gene, what is the risk of an affected child?</strong></p>
+                <label><input type="radio" name="q2" value="wrong1"> <span data-i18n="quiz_q2_opt1">100% of children will definitely be sick.</span></label>
+                <label><input type="radio" name="q2" value="correct"> <span data-i18n="quiz_q2_opt2">25% (1 in 4 chance) in each pregnancy independently; 75% will be unaffected.</span></label>
+                <label><input type="radio" name="q2" value="wrong2"> <span data-i18n="quiz_q2_opt3">Only male children can inherit it.</span></label>
+              </div>
+
+              <div class="quiz-question">
+                <p><strong data-i18n="quiz_q3_text">3. Can a carrier couple have biologically healthy children together in Abu Dhabi?</strong></p>
+                <label><input type="radio" name="q3" value="correct"> <span data-i18n="quiz_q3_opt1">Yes, through IVF with PGT-M, prenatal diagnosis, or early neonatal intervention.</span></label>
+                <label><input type="radio" name="q3" value="wrong1"> <span data-i18n="quiz_q3_opt2">No, there are no medical options available.</span></label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="submitQuizBtn" data-i18n="quiz_submit_btn">Submit Assessment</button>
+            </form>
+
+            <div id="quizResultBox" class="alert-box success-alert" style="display: none; margin-top: 15px;">
+              🎯 <strong>Comprehension Score: <span id="quizScoreText">100%</span>!</strong> Your understanding of
+              carrier genetics, non-coercive options, and probability has been recorded in the platform metrics.
+            </div>
+          </div>
+        </div>
+
+        <!-- Tamper-Evident Consent & Privacy Audit Ledger -->
+        <div class="card">
+          <div class="card-header">
+            <h3 data-i18n="ledger_title">Cryptographic Consent & Access Audit Ledger</h3>
+          </div>
+          <div class="card-body">
+            <p data-i18n="ledger_desc">
+              Immutable, auditable activity log guaranteeing that no unauthorized family member accessed genetic data:
+            </p>
+
+            <div class="ledger-table-wrapper">
+              <table class="ledger-table">
+                <thead>
+                  <tr>
+                    <th data-i18n="th_txid">Tx ID</th>
+                    <th data-i18n="th_action">Action</th>
+                    <th data-i18n="th_subject">Subject ID</th>
+                    <th data-i18n="th_scope">Scope</th>
+                    <th data-i18n="th_status">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="ledgerTableBody">
+                  <!-- Populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 7: MEDSISTER AI NAVIGATOR -->
+    <section id="tab-ai-navigator" class="tab-pane">
+      <div class="section-header">
+        <h2 data-i18n="chat_title">MedSister AI Conversational Genetic Navigator</h2>
+        <p data-i18n="chat_subtitle">
+          Empathetic, culturally aware, bilingual assistant. Ask questions in English or Arabic about carrier status,
+          consanguinity, Islamic bioethics, and reproductive options.
+        </p>
+      </div>
+
+      <div class="chat-wrapper">
+        <div class="chat-disclaimer" data-i18n="chat_disclaimer">🔒 <strong>Clinical Boundary Guardrail:</strong> MedSister AI provides patient education and decision support. It does not provide medical diagnoses or prescriptions. Complex cases are escalated directly to accredited human genetic counselors.</div>
+
+        <div class="chat-messages" id="chatMessages">
+          <div class="message bot-message">
+            <div class="msg-avatar"><img src="logo.png" alt="MedSister" class="msg-avatar-img"></div>
+            <div class="msg-content">
+              <p data-i18n="chat_welcome">
+                Marhaban! I am <strong>MedSister</strong>, your premarital genomics navigator. You can ask me about
+                carrier testing, how consanguinity affects recessive genes, Islamic bioethics regarding PGT-M, or how
+                your privacy is protected. How can I help you today?
+              </p>
+              <div class="quick-prompts">
+                <button class="quick-prompt-btn" data-query="What does being a carrier mean?">What does being a carrier
+                  mean?</button>
+                <button class="quick-prompt-btn"
+                  data-query="Does marrying my cousin guarantee our children will be sick?">Does marrying my cousin
+                  guarantee sick children?</button>
+                <button class="quick-prompt-btn" data-query="What is PGT-M and how does it help?">What is PGT-M and how
+                  does it help?</button>
+                <button class="quick-prompt-btn" data-query="هل الفحص يجبرني على إلغاء الزواج؟">هل الفحص يجبرني على
+                  إلغاء الزواج؟ (Arabic)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input-bar">
+          <input type="text" id="chatInput" class="custom-input"
+            placeholder="Type your genetic question in English or Arabic..." data-i18n-placeholder="chat_placeholder">
+          <button id="sendChatBtn" class="btn btn-primary">
+            <span data-i18n="send_btn">Send</span> ➔
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span data-i18n="footer_text"><strong>MedSister GenCare 2.0</strong> — Designed for the Abu Dhabi Future Health Digital Innovation Challenge 2026.</span>
+      </div>
+      <div class="footer-right">
+        <span data-i18n="footer_standards">Integrated with Department of Health – Abu Dhabi (DoH) & Emirati Genome Program standards</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+
+</html>
